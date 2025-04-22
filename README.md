@@ -10,6 +10,7 @@ Some differences from the tutorial:
 - I separated game functionality into Bevy plugins
 - I addressed a couple of bugs mentioned in the tutorial
 - I decided to go for a warping border instead of a wall
+- I added [a quit plugin](src/plugins/quit.rs) to support multiple key bindings to exit a bevy game. This plugin is adapted from [Joan Antoni's `bevy_quit`](https://github.com/joanantonio/bevy_quit) to work with the latest version of Bevy.
 
 ## Running the game
 
@@ -23,8 +24,8 @@ Use the arrow keys to move the snake. The goal is to eat as much food as possibl
 
 ## Controls
 
-- Arrow keys (←, →, ↑, ↓) : Move the snake
-- Q: Quit the game
+- Arrow keys (<kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>) : Move the snake
+- <kbd>Q</kbd> : Quit the game
 
 ## License
 
