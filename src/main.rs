@@ -281,12 +281,12 @@ fn snake_growth(
     commands: Commands,
     last_tail_position: Res<LastTailPosition>,
     mut segments: ResMut<SnakeSegments>,
-    growth_reader: EventReader<GrowthEvent>,
+    mut growth_reader: EventReader<GrowthEvent>,
 ) {
-    if !growth_reader.is_empty() {
-        segments
-            .0
-            .push(spawn_segment(commands, last_tail_position.0.unwrap()));
+    if growth_reader.read().next().is_some() {
+        if let Some(last_tail_position) = last_tail_position.0 {
+            segments.0.push(spawn_segment(commands, last_tail_position));
+        }
     }
 }
 
